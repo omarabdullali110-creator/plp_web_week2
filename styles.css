@@ -1,0 +1,205 @@
+/* ==========================================================================
+   1. Global Reset & Body Setup
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   2. Header & Logo Styling
+   ========================================================================== */
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* ADVANCED SELECTOR 1: Direct Child Selector (header > img) */
+header > img.header-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 12px auto;
+  border-radius: 8px;
+}
+
+header h1 {
+  font-size: 1.875rem;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+header p {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   3. Collapsible Details & Summary Element
+   ========================================================================== */
+.help-guide {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.help-guide summary {
+  font-weight: 600;
+  color: #2563eb;
+  cursor: pointer;
+  outline: none;
+}
+
+.help-guide summary:hover {
+  color: #1d4ed8;
+}
+
+.guide-content {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.guide-content ol {
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.guide-content li {
+  margin-bottom: 4px;
+}
+
+/* ==========================================================================
+   4. Card Sections & Video
+   ========================================================================== */
+section {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+section h2 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #f8fafc;
+  padding-bottom: 8px;
+}
+
+/* Makes embedded YouTube iframe responsive within its card */
+section iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* ==========================================================================
+   5. Form Elements & Advanced Selectors
+   ========================================================================== */
+#expense-form div {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+/* ADVANCED SELECTOR 2: Negation Pseudo-class (input:not([type="button"])) */
+/* Styles all form inputs except for buttons */
+input:not([type="button"]),
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+/* ADVANCED SELECTOR 3: Focus State Pseudo-class (input:focus, select:focus) */
+input:focus,
+select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+button#add-btn {
+  width: 100%;
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s ease;
+}
+
+button#add-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* ==========================================================================
+   6. Table & Positional Selectors
+   ========================================================================== */
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+/* ADVANCED SELECTOR 4: Descendant Selector (.expense-table td) */
+.expense-table th,
+.expense-table td {
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+}
+
+.expense-table thead tr {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.expense-table th {
+  font-weight: 600;
+}
+
+/* ADVANCED SELECTOR 5: Positional Pseudo-class (tr:nth-child(even)) */
+.expense-table tbody tr:nth-child(even) {
+  background-color: #f1f5f9;
+}
+
+.expense-table tbody tr:hover {
+  background-color: #e2e8f0;
+  transition: background-color 0.15s ease;
+}
